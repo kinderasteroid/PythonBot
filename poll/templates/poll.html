@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Poll App</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(248, 248, 8)
+
+
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+}
+
+#poll {
+  margin: 20px auto;
+  width: 400px;
+  height: 250px;
+  background-color: #eed7e7;
+  border-radius: 7px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 130px;
+  
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.label-red {
+  background-color: #e00707;
+}
+
+.label-blue {
+  background-color: #0e5dd4;
+}
+
+.label-green {
+  background-color: #0cf50c;
+}
+
+.label-red, .label-blue, .label-green {
+  display: inline-block;
+  padding: 10px;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  opacity: 0.65;
+  margin-top: 10px;
+}
+
+.label-red:hover, .label-blue:hover, .label-green:hover {
+  opacity: 1;
+}
+input:checked + .label-red,input:checked + .label-blue,input:checked + .label-green {
+ border: 1.2px solid black;
+}
+
+button {
+  display: block;
+  margin-top: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  justify-content: center;
+  margin-left: 130px;
+  margin-top: 50px;
+  position: absolute;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+#result {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #333;
+  margin-left: 100px;
+  justify-content: center;
+}
+#logout{
+  display: block;
+  
+  background-color: #df0909;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  justify-content: center;
+  margin-left: 1250px;
+  top: -30px;
+ 
+  position: absolute;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+#result {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #333;
+  margin-left: 100px;
+  justify-content: center;
+}
+#redres,#blueres,#greenres{
+    position: absolute;
+    margin-left: 200px;
+}
+.opt1{
+  margin-left: 320px;
+}
+  </style>
+  
+</head>
+<body>
+  <button id="logout" onclick="window.location.href = '../../users/login'">Logout</button>
+  <form action="{% url 'poll' %}" method="GET">
+    
+  <h1 style="color: rgb(127, 7, 163);">What's Your Favorite Color?</h1>
+  <div id="poll">
+    <div class="option">
+      <input type="radio" id="option-red" name="color" value="red">
+      <label for="option-red" class="label-red">Red</label>
+      <div id="redres"> No of Votes for Red = </div><a  type="text" id="redc" class="opt1" value="{{rd}}">{{rd}}</a>
+    </div>
+    <div class="option">
+      <input type="radio" id="option-blue" name="color" value="blue">
+      <label for="option-blue" class="label-blue">Blue</label>
+      <div id="blueres">No of Votes for Blue = </div><a type="text" name="bluec" class="opt1" value="{{bl}}" > {{bl}} </a>
+      
+    </div>
+    <div class="option">
+      <input type="radio" id="option-green" name="color" value="green">
+      <label for="option-green" class="label-green">Green</label>
+      <div id="greenres"> No of Votes for Green =  </div><a type="text" name="greenc" class="opt1" value="{{gr}}"> {{gr}} </a>
+    </div>
+    <button type="submit" onclick="submitVote()">Submit Vote</button>
+  </div>
+  <div id="result"></div>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>

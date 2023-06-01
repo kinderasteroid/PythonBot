@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(to left,rgb(202, 236, 9),rgb(179, 7, 107));
+    
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .form-group {
+    margin-bottom: 14px;
+    
+    background: transparent;
+    width: 400px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  fieldset,
+  select {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+fieldset{
+    
+    
+  width: 0px;
+  background:rgb(254, 255, 248,0.15)
+
+  
+    
+
+}
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 300px;
+    margin-top: 40px;
+  }
+  #back{
+    padding: 10px 15px;
+    background-color: #1567aa;
+    opacity: 0.7;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    position: absolute;
+    top:590px;
+    width: 130px;
+    margin-bottom:60px;
+    }
+    #back:hover{
+      opacity: 1;
+      transition: 0.4s;
+    }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+  #registrationForm{
+    
+    position: absolute;
+    width: 100px;
+    margin-left: 450px;
+    height: 100px;
+    
+  }
